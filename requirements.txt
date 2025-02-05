@@ -8,7 +8,9 @@ click-plugins==1.1.1
 click-repl==0.3.0
 colorama==0.4.6
 Django==5.1.5
+gunicorn==23.0.0
 kombu==5.4.2
+packaging==24.2
 prompt_toolkit==3.0.50
 python-dateutil==2.9.0.post0
 six==1.17.0
