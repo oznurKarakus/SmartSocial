@@ -1,0 +1,16 @@
+{% extends "scheduling/index.html" %}
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+  <div class="card">
+    <div class="card-header">
+      <h1>{{ post.title }}</h1>
+    </div>
+    <div class="card-body">
+      <p class="card-text">{{ post.content }}</p>
+    </div>
+    <div class="card-footer">
+        <a href="{% url 'dashboard' %}" class="btn btn-secondary">Back to Posts</a>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "scheduling/index.html" %}
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h1>Dashboard</h1>
+    <div>
+      <a href="{% url 'create_post' %}" class="btn btn-primary me-2">Add New Post</a>
+      <a href="{% url 'manage_templates' %}" class="btn btn-info">Manage Post Templates</a>
+    </div>
+  </div>
+
+  <h2>Posts</h2>
+  <ul class="list-group">
+    {% for post in posts %}
+      <li class="list-group-item">
+        <a href="{% url 'post_detail' post.id %}"><strong>{{ post.title }}</strong></a>
+        <p class="mb-0">{{ post.content }}</p>
+      </li>
+    {% empty %}
+      <li class="list-group-item">No posts available</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
+

@@ -1,0 +1,19 @@
+{% extends "scheduling/index.html" %}
+{% block title %}Post Templates{% endblock %}
+
+{% block content %}
+  <div class="mb-4">
+    <h1>Post Templates</h1>
+    <a href="{% url 'create_template' %}" class="btn btn-primary">Create New Template</a>
+  </div>
+
+  <ul class="list-group">
+    {% for template in templates %}
+      <li class="list-group-item">
+        <strong>{{ template.title }}</strong> - {{ template.content }}
+      </li>
+    {% empty %}
+      <li class="list-group-item">No templates available</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
